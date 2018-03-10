@@ -13,6 +13,9 @@
     .slide pre code:not(:only-child)[data-line-num]::before {
       content: attr(data-line-num) ".";
     }
+    .slide pre code:not(:only-child)[data-line-num-false]::before {
+      display: none;
+    }
   </style>
 </head>
 <body class="shower list">
@@ -49,6 +52,14 @@
   </section>
 
   <section class="slide">
+    <h2>Задачи</h2>
+    <ul>
+      <li>Поделиться опытом и ошибками.</li>
+      <li>Вдохновить на изучение технологий.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
     <h2>О какой работе речь?</h2>
     <p>Вёрстка и модификация страниц.</p>
     <ul>
@@ -67,6 +78,7 @@
     <ul>
       <li>Знание типовых решений типовых задач.</li>
       <li>Быстрый набор, <a href="https://emmet.io/">Emmet</a>, <a href="https://nicothin.github.io/sublime-text/sublime-text-3-hotkeys.html">горячие кнопки</a>.</li>
+      <li>Обработка разметки и стилей.</li>
       <li>Автоматизация рутинных действий.</li>
       <li>Знакомое предсказуемое окружение проекта. Стартовый репозиторий.</li>
     </ul>
@@ -86,12 +98,25 @@
   </section>
 
   <section class="slide">
+    <h2>О чём не хочется думать во время работы</h2>
+    <ol>
+      <li>Добавление файлов блока в разметку, стили, JS.</li>
+      <li>Сборка/пересборка спрайтов.</li>
+      <li>Изменение разметки общих частей страницы.</li>
+      <li>Изменение разметки многократно использованных блоков.</li>
+      <li>Обновление страницы при изменении файлов.</li>
+    </ol>
+  </section>
+
+
+  <section class="slide">
     <h2>Как я работаю</h2>
     <ol>
       <li>Перехожу в директорию проекта: <code>cd /d/projects/SomeName</code>.</li>
       <li>Стартую сервер разработки: <code>npm start</code> (алиас <code>s</code>).</li>
       <li>Редактирую файлы, вижу изменения в браузере.</li>
     </ol>
+    <p>Пока сервер работает, проект можно просматривать с любого устройства в&nbsp;рамках локальной сети.</p>
   </section>
 
   <section class="slide">
@@ -175,9 +200,33 @@
   </section>
 
   <section class="slide">
+    <h2>Не всем БЭМ-блокам нужны pug-примеси</h2>
+    <p>Для каких БЭМ-блоков я их не использую:</p>
+    <ul>
+      <li>Общая раскладка блоков на всех страницах (<code>page</code>).</li>
+      <li>Внутренняя раскладка в больших блоках страниц (<code>layout-text</code>).</li>
+    </ul>
+  </section>
+
+  <section class="slide">
     <h2>Что компилируется?</h2>
-    <p>При старте любой gulp-задачи сгенерируется <code>src/pug/mixins.pug</code>, в&nbsp;котором импортируются pug-файлы БЭМ-блоков.</p>
-    <p>Компилируются все pug-файлы, лежащие в <code>src/</code><br>(на основе шаблонов страниц из <code>src/pug/</code>).</p>
+    <p>При старте любой gulp-задачи сгенерируется <code>src/pug/mixins.pug</code>, в&nbsp;котором добавляются pug-файлы БЭМ-блоков.</p>
+    <p>Компилируются все pug-файлы, лежащие в <code>src/</code>.</p>
+    <p>Результат пишется в <code>build/</code>.</p>
+  </section>
+
+  <section class="slide">
+    <p><code>src/pug/mixins.pug</code></p>
+    <pre>
+      <code>include ../blocks/page-header/page-header.pug</code>
+      <code>include ../blocks/page-footer/page-footer.pug</code>
+      <code>include ../blocks/logo/logo.pug</code>
+      <code>include ../blocks/main-nav/main-nav.pug</code>
+      <code>include ../blocks/btn/btn.pug</code>
+      <code>include ../blocks/progress/progress.pug</code>
+      <code data-line-num-false>...</code>
+      <code data-line-num="99">include ../blocks/field-text/field-text.pug</code>
+    </pre>
   </section>
 
   <section class="slide black">
@@ -186,7 +235,7 @@
   </section>
 
   <section class="slide">
-    <h2>Стилевые файлы до стилей блоков</h2>
+    <h2>Стили ДО блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
     <pre>
       <code>"addCssBefore": [</code>
       <code>  "./src/scss/functions.scss",</code>
@@ -198,7 +247,7 @@
   </section>
 
   <section class="slide">
-    <h2>Стилевые файлы после стилей блоков</h2>
+    <h2>Стили ПОСЛЕ блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
     <pre>
       <code>"addCssAfter": [</code>
       <code>  "./src/scss/print.scss"</code>
@@ -207,7 +256,7 @@
   </section>
 
   <section class="slide">
-    <h2>Стили, компилируемые отдельно</h2>
+    <h2>Файлы, компилируемые отдельно</h2>
     <pre>
       <code>"singleCompiled": [</code>
       <code>  "./src/scss/blocks-library.scss"</code>
@@ -223,20 +272,69 @@
       <li>Стилевые файлы блоков.</li>
       <li>Стилевые файлы после стилей блоков.</li>
     </ol>
+    <p>Он и компилируется в <code>build/css/</code>.</p>
   </section>
 
   <section class="slide">
+    <p><code>src/scss/style.scss</code></p>
     <pre>
       <code>@import './src/scss/functions.scss';</code>
       <code>@import './src/scss/variables.scss';</code>
       <code>@import './src/scss/mixins.scss';</code>
-      <code>@import '../../node_modules/owl.carousel/dist/assets/owl.carousel.css';</code>
-      <code>@import '../../node_modules/nouislider/distribute/nouislider.css';</code>
+      <code>@import '../../node_modules/nouislider/distribute/...</code>
       <code>@import './src/blocks/page/page.scss';</code>
       <code>@import './src/blocks/typo/typo.scss';</code>
-      <code>...</code>
-      <code data-line-num="69">@import './src/scss/print.scss';</code>
+      <code data-line-num-false>...</code>
+      <code data-line-num="99">@import './src/scss/print.scss';</code>
     </pre>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Javascript</h2>
+    <img class="cover" src="pictures/js.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>JS перед блоками в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addJsBefore": [</code>
+      <code>  "./node_modules/jquery/dist/jquery.min.js",</code>
+      <code>  "./node_modules/jquery-migrate/dist/jquery-migrate.min.js",</code>
+      <code>  "./node_modules/svg4everybody/dist/svg4everybody.js",</code>
+      <code>  "./node_modules/ismobilejs/isMobile.min.js",</code>
+      <code>  "./node_modules/object-fit-images/dist/ofi.js"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>JS после блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addJsAfter": [</code>
+      <code>  "./src/js/global-script.js"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Как обрабатывается?</h2>
+    <p>Сливается в один файл и записывается в <code>build/js/script.min.js</code>.</p>
+  </section>
+
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Linting</h2>
+    <img class="cover" src="pictures/lint.jpg" style="width: 100%; max-height: none;" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Единообразие кода = быстрое чтение</h2>
+    <ul>
+      <li>Быстрая модификация.</li>
+      <li>Лучше видно ошибки.</li>
+      <li>Нет холивара при совместной работе.</li>
+    </ul>
+    <p>Проверка по командам и по прекоммит-хуку.</p>
   </section>
 
   <div class="progress"></div>
