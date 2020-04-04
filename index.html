@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Как я ускоряю свою работу</title>
+  <title>Ускорение работы верстальщика</title>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
-  <style>
-    .slide::after {
-      display: none;
-    }
-    .slide pre code:not(:only-child)[data-line-num]::before {
-      content: attr(data-line-num) ".";
-    }
-    .slide pre code:not(:only-child)[data-line-num-false]::before {
-      display: none;
-    }
-  </style>
+  <link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+  <link rel="stylesheet" href="prism/prism.css">
+  <link rel="stylesheet" href="shower/nicothin.css">
 </head>
 <body class="shower list">
 
   <header class="caption">
-    <h1>Как я ускоряю свою работу</h1>
+    <h1>Как я ускоряю работу</h1>
     <p>Николай Громов</p>
   </header>
 
-  <section class="slide black" id="cover" style="display: flex; flex-direction: column; justify-content: flex-end; padding-left: 50px; padding-right: 50px;">
+
+
+  <section class="slide black" id="cover"
+    style="display: flex; flex-direction: column; justify-content: flex-end; padding-left: 50px; padding-right: 50px;">
     <h2>Как я ускоряю свою работу</h2>
-    <p style="margin-bottom: 10px;">Сеанс автоматической магии, делающей работу более быстрой, приятной и слегка опасной.<br> <a href="http://nicothin.pro/">Николай Громов</a>. Внутренняя Монголия. Вечность, лето.</p>
+    <p style="margin-bottom: 10px;">Сеанс автоматической магии, делающей работу более быстрой, приятной и слегка
+      опасной.<br> <a href="http://nicothin.pro/">Николай Громов</a>. Внутренняя Монголия. Вечность, лето.</p>
     <figure>
       <img class="cover" src="pictures/cover.jpg" alt="">
     </figure>
     <style>
       #cover h2 {
-        margin:30px 0 0;
-        color:#FFF;
-        text-align:center;
-        font-size:70px;
-        }
+        margin: 30px 0 0;
+        color: #FFF;
+        text-align: center;
+        font-size: 70px;
+      }
+
       #cover p {
-        margin:10px 0 0;
-        text-align:center;
-        color:#FFF;
-        font-style:italic;
-        font-size:20px;
-        }
-        #cover p a {
-          color:#FFF;
-          }
+        margin: 10px 0 0;
+        text-align: center;
+        color: #FFF;
+        font-style: italic;
+        font-size: 20px;
+      }
+
+      #cover p a {
+        color: #FFF;
+      }
     </style>
   </section>
 
@@ -69,43 +65,231 @@
     <p>Результат: HTML, CSS, JS, изображения, шрифты.</p>
   </section>
 
-  <section class="slide black">
-    <img class="cover" src="pictures/dino.png" alt="">
-  </section>
-
   <section class="slide">
     <h2>Как вообще ускорить работу?</h2>
     <ul>
       <li>Знание типовых решений типовых задач.</li>
-      <li>Быстрый набор, <a href="https://emmet.io/">Emmet</a>, <a href="https://nicothin.github.io/sublime-text/sublime-text-3-hotkeys.html">горячие кнопки</a>.</li>
-      <li>Обработка разметки и стилей.</li>
-      <li>Автоматизация рутинных действий.</li>
-      <li>Знакомое предсказуемое окружение проекта. Стартовый репозиторий.</li>
+      <li class="next">Быстрый набор, <a href="https://emmet.io/">Emmet</a>, горячие кнопки.</li>
+      <li class="next">Обработка разметки и стилей.</li>
+      <li class="next">Автоматизация рутинных действий.</li>
+      <li class="next">Знакомое предсказуемое окружение проекта. Стартовый репозиторий.</li>
     </ul>
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/nicothin/NTH-start-project">Стартовый репозиторий NTH-start-project</a></h2>
+    <pre class="language-bash  no-nums">
+      <code>NTH-start-project/</code>
+      <code>  build/ # результат сборки (редактировать файлы бессмысленно)</code>
+      <code>  src/   # исходные файлы</code>
+    </pre>
+    <ul class="list-compact">
+      <li>Процессинг разметки и стилей.</li>
+      <li>Автообновление страницы по изменению.</li>
+      <li>Стартовый набор блоков.</li>
+      <li>Пересборка спрайтов.</li>
+      <li>Проверка кода перед коммитом.</li>
+      <li>...</li>
+      <li>PROFIT</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/nicothin/NTH-start-project">Стартовый репозиторий NTH-start-project</a></h2>
+    <pre class="language-bash  no-nums">
+      <code>src/</code>
+      <code>  blocks/  # БЭМ блоки (каждый блок в своей подпапке)</code>
+      <code>  favicon/ # иконки сайта (на вкладке браузера, для мобильных...)</code>
+      <code>  fonts/   # шрифты</code>
+      <code>  img/     # общие картинки (не завязанные на к-л БЭМ-блок)</code>
+      <code>  js/      # общий javascript, не завязанный на к-л БЭМ-блок</code>
+      <code>  pages/   # все страницы сайта</code>
+      <code>  pug/     # доп. pug-файлы: раскладки, диспетчер примесей</code>
+      <code>  scss/    # доп. стилевые файлы: переменные, диспетчер подключений</code>
+    </pre>
   </section>
 
   <section class="slide">
     <h2>Мой стек</h2>
     <ul>
+      <li>Git, терминал.</li>
       <li>БЭМ, все технологии блока в директории блока.</li>
-      <li>Sass & PostCSS для стилей.</li>
       <li>Pug для разметки.</li>
-      <li>Простая конкатенация для JS.</li>
-      <li>Спрайты (растровые, векторные).</li>
-      <li>Gulp, git, терминал.</li>
+      <li>Sass & PostCSS для стилей.</li>
+      <li>Обработка javascript.</li>
     </ul>
-    <p>Требуется <a href="https://nodejs.org/en/">Node.js</a>.</p>
+  </section>
+
+
+
+
+
+  <section class="slide">
+    <h2>Git — система контроля версий</h2>
+    <ul>
+      <li>«Сохранения» (коммиты) как в играх.</li>
+      <li>«Машина времени».</li>
+      <li>Логическое ветвление разработки и лёгкое слияние веток.</li>
+      <li>Параллельная работа в команде и/или с разных компьютеров.</li>
+      <li>Удобные код-ревью на внешних сервисах.</li>
+      <li>Резервная копия у каждого участника проекта и «в облаке».</li>
+    </ul>
+  </section>
+
+  <div class="slide  black">
+    <img src="pictures/terminal.jpg" alt="" class="cover" style="object-fit: contain;">
+  </div>
+
+
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">БЭМ</h2>
+    <img class="cover" src="pictures/dino.jpg" style="width: 100%; max-height: none;" alt="">
   </section>
 
   <section class="slide">
-    <h2>О чём не хочется думать во время работы</h2>
+    <h2>БЭМ как универсальная методология</h2>
+    <p>Разделение интерфейса на блоки, блоков на элементы.</p>
+    <ul>
+      <li>Применима на любом проекте.</li>
+      <li>Реализует компонентный подход.</li>
+      <li>Самодокументируется.</li>
+      <li>Решает некоторые врождённые проблемы технологий.</li>
+    </ul>
+  </section>
+
+  <div class="slide">
+    <pre class="language-html">
+      <code>&lt;article class=&quot;blog-post&quot;&gt;</code>
+      <code>  &lt;h2 class=&quot;blog-post__title&quot;&gt;...&lt;/h2&gt;</code>
+      <code>  &lt;div class=&quot;blog-post__content&quot;&gt;</code>
+      <code>    ...</code>
+      <code>  &lt;/div&gt;</code>
+      <code>  &lt;footer class=&quot;blog-post__footer&quot;&gt;...&lt;/footer&gt;</code>
+      <code>&lt;/article&gt;</code>
+      <code> </code>
+      <code>&lt;article class=&quot;blog-post  blog-post--accent&quot;&gt;</code>
+      <code>  &lt;h2 class=&quot;blog-post__title&quot;&gt;...&lt;/h2&gt;</code>
+      <code>  &lt;div class=&quot;blog-post__content&quot;&gt;</code>
+      <code>    ...</code>
+      <code>  &lt;/div&gt;</code>
+      <code>  &lt;footer class=&quot;blog-post__footer&quot;&gt;...&lt;/footer&gt;</code>
+      <code>&lt;/article&gt;</code>
+    </pre>
+  </div>
+
+  <section class="slide  black">
+    <img src="pictures/epixx_books_index.jpg" alt=""
+      style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 610px">
+    <div class="next"
+      style="position: absolute; z-index: 1; top:0; left: 207px; width: 610px; height: 24px; background: rgba(255,0,0,0.3);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top:24px; left: 207px; width: 610px; height: 285px; background: rgba(0,255,0,0.3);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top:309px; left: 207px; width: 610px; height: 323px; background: rgba(0,0,255,0.3);">
+    </div>
+    <div class="next">
+      <div
+        style="position: absolute; z-index: 1; top:0; left: 231px; width: 69px; height: 24px; background: rgba(255,0,0,0.3);">
+      </div>
+      <div
+        style="position: absolute; z-index: 1; top:0; left: 581px; width: 150px; height: 24px; background: rgba(255,0,0,0.3);">
+      </div>
+      <div
+        style="position: absolute; z-index: 1; top:357px; left: 236px; width: 124px; height: 270px; background: rgba(0,0,255,0.3);">
+      </div>
+      <div
+        style="position: absolute; z-index: 1; top:357px; left: 378px; width: 124px; height: 270px; background: rgba(0,0,255,0.3);">
+      </div>
+      <div
+        style="position: absolute; z-index: 1; top:357px; left: 522px; width: 124px; height: 270px; background: rgba(0,0,255,0.3);">
+      </div>
+      <div
+        style="position: absolute; z-index: 1; top:357px; left: 664px; width: 124px; height: 270px; background: rgba(0,0,255,0.3);">
+      </div>
+    </div>
+  </section>
+
+  <div class="slide">
+    <pre class="language-html">
+      <code>&lt;header class="page-header"></code>
+      <code>  &lt;div class="page-header__inner"></code>
+      <code>    &lt;a href="/" class="logo"></code>
+      <code>      &lt;svg class="logo__img">...&lt;/svg></code>
+      <code>    &lt;/a></code>
+      <code>  &lt;/div></code>
+      <code>&lt;/header></code>
+      <code> </code>
+      <code>&lt;div class="promo"></code>
+      <code>  &lt;div class="promo__inner  slider"></code>
+      <code>    &lt;section class="slider__item">...&lt;/section></code>
+      <code>    &lt;section class="slider__item">...&lt;/section></code>
+      <code>    &lt;section class="slider__item">...&lt;/section></code>
+      <code>  &lt;/div></code>
+      <code>&lt;/div></code>
+    </pre>
+  </div>
+
+  <div class="slide  black">
+    <img src="pictures/epixx_books_index.jpg" alt=""
+      style="position: absolute; top: -519px; left: 50%; transform: translateX(-50%); width: 1024px">
+    <div class="next"
+      style="position: absolute; z-index: 1; top: 82px; left: 288px; width: 208px; height: 449px; background: rgba(0,0,0,0.1);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top: 82px; left: 288px; width: 208px; height: 296px; background: rgba(255,0,0,0.3);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top: 393px; left: 288px; width: 208px; height: 65px; background: rgba(0,255,0,0.3);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top: 457px; left: 288px; width: 208px; height: 44px; background: rgba(0,0,255,0.3);">
+    </div>
+    <div class="next"
+      style="position: absolute; z-index: 1; top: 501px; left: 288px; width: 208px; height: 30px; background: rgba(255,0,0,0.3);">
+    </div>
+  </div>
+
+  <div class="slide">
+    <pre class="language-html">
+      <code>&lt;div class="catalog"></code>
+      <code>  &lt;div class="catalog__item">...&lt;div></code>
+      <code>  &lt;div class="catalog__item"></code>
+      <code>    &lt;article class="card"></code>
+      <code>      &lt;a class="card__wrap" href="..."></code>
+      <code>        &lt;img class="card__img" src="..." alt="Путеводитель по лжи"></code>
+      <code>        &lt;h2 class="card__title">Путеводитель по лжи&lt;/h2></code>
+      <code>      &lt;/a></code>
+      <code>      &lt;p class="card__descr">Критическое мышление в эпоху постправды.&lt;/p></code>
+      <code>      &lt;p class="card__price">630 ₽&lt;/p></code>
+      <code>    &lt;/article></code>
+      <code>  &lt;/div></code>
+      <code>  &lt;div class="catalog__item">...&lt;div></code>
+      <code>  ...</code>
+      <code>&lt;/div></code>
+    </pre>
+  </div>
+
+
+
+
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Ближе к делу</h2>
+    <img class="cover" src="pictures/fry.jpg" style="width: 100%; max-height: none;" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Рутина</h2>
     <ol>
-      <li>Добавление файлов блока в разметку, стили, JS.</li>
-      <li>Сборка/пересборка спрайтов.</li>
-      <li>Изменение разметки общих частей страницы.</li>
-      <li>Изменение разметки многократно использованных блоков.</li>
-      <li>Обновление страницы при изменении файлов.</li>
-      <li>Перенос файлов между устройствами для тестирования.</li>
+      <li>Добавил БЭМ-блок в разметку — нужно добавить его стили, JS.</li>
+      <li class="next">Сборка/пересборка спрайтов.</li>
+      <li class="next">Изменение разметки общих частей страницы.</li>
+      <li class="next">Изменение разметки многократно использованных блоков.</li>
+      <li class="next">Обновление страницы при изменении файлов.</li>
+      <li class="next">Перенос файлов между устройствами для тестирования.</li>
     </ol>
   </section>
 
@@ -121,41 +305,53 @@
   </section>
 
   <section class="slide">
-    <h2><a href="https://github.com/nicothin/NTH-start-project">Стартовый репозиторий</a></h2>
-    <p><code><a href="https://github.com/nicothin/NTH-start-project/tree/master/src">src/</a></code> для исхоников, <code><a href="https://github.com/nicothin/NTH-start-project/tree/master/build">build/</a></code> для результата работы.</p>
-    <ul>
-      <li>Процессинг разметки и стилей.</li>
-      <li>Пересборка спрайтов.</li>
-      <li>Автообновление страницы по изменению.</li>
-      <li>Стартовый набор блоков.</li>
-      <li>Модульная сетка (примеси).</li>
-      <li>Быстрая публикация на GitHub Pages.</li>
-    </ul>
+    <h2>Как это работает: <code>npm start</code></h2>
+    <ol>
+      <li>Очищается папка <code>build/</code></li>
+      <li class="next">Собирается разметка страниц из <code>src/pages/</code> в <code>build/</code></li>
+      <li class="next">По разметке составляется плоский список использованных БЭМ-блоки (ясно какие стилевые файлы, js-файлы, картинки должны попасть в сборку).</li>
+      <li class="next">Автоматически собирается <code>src/scss/style.scss</code>.</li>
+      <li class="next">Автоматически собирается <code>src/js/entry.js</code>.</li>
+      <li class="next">Компилируются/собираются/минифицируются стили и js, копируются дополнительные файлы.</li>
+      <li class="next">Запускается слежение за сохранением файлов и автообновление.</li>
+    </ol>
   </section>
 
   <section class="slide">
-    <h2><a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">Один конфиг</a>, чтобы править всеми</h2>
-    <ul>
-      <li>Какие блоки используются на проекте?</li>
-      <li>Какие дополнительные файлы брать?</li>
-      <li>Какие имена у директорий?</li>
-    </ul>
-    <p>Проблема: капризность формата.</p>
-  </section>
-
-  <section class="slide">
-    <h2>Блоки в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
-    <pre>
-      <code>"blocks": {</code>
-      <code>  "page": [],</code>
-      <code>  "typo": [],</code>
-      <code>  "sprite-png": [</code>
-      <code>    "__demo"</code>
-      <code>  ],</code>
-      <code>  "page-header": [],</code>
-      <code>}</code>
+    <h2><a href="https://github.com/nicothin/NTH-start-project/blob/master/config.js">Один конфиг</a>, чтобы править всеми</h2>
+    <pre class="language-js" style="font-size: 85%;">
+      <code>let config = {</code>
+      <code>  'notGetBlocks': [],    // Список файлов разметки, из которых не собирать блоки</code>
+      <code>  'ignoredBlocks': [],   // Список Блоков, которые никогда не брать в сборку</code>
+      <code>  'alwaysAddBlocks': [], // Список блоков, которые всегда брать в сборку</code>
+      <code>  'addStyleBefore': [],  // Доп. стилевые файлы (брать в сборку до файлов блоков)</code>
+      <code>  'addStyleAfter': [],   // Доп. стилевые файлы (брать в сборку после файлов блоков)</code>
+      <code>  'addJsBefore': [],     // Доп. js-файлы (брать в сборку до файлов блоков)</code>
+      <code>  'addJsAfter': [],      // Доп. js-файлы (брать в сборку до файлов блоков)</code>
+      <code>  'addAssets': {},       // Любые файлы и куда их копировать</code>
+      <code>  'dir': {},             // Имена папок</code>
+      <code>};</code>
     </pre>
   </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/nicothin/NTH-start-project/blob/master/config.js">Один конфиг</a>, чтобы править всеми</h2>
+    <pre class="language-js" style="font-size: 85%;">
+      <code>let config = {</code>
+      <code>  ...</code>
+      <code>  'addStyleBefore': [</code>
+      <code>    'src/scss/variables.scss',</code>
+      <code>    'src/scss/mixins.scss',</code>
+      <code>    'somePackage/somePackage.css', // для 'node_modules/somePackage/somePackage.css'</code>
+      <code>  ],</code>
+      <code>  ...</code>
+      <code>};</code>
+    </pre>
+  </section>
+
+
+
+
 
   <section class="slide black">
     <h2 style="color: #fff; font-size: 72px;">Блоки</h2>
@@ -163,164 +359,163 @@
   </section>
 
   <section class="slide">
-    <h2>Блок</h2>
-    <pre>
-      <code><a href="https://github.com/nicothin/NTH-start-project/tree/master/src/blocks/burger">src/blocks/burger/</a></code>
-      <code>  burger.js</code>
-      <code>  burger.pug</code>
-      <code>  burger.scss</code>
-      <code>  readme.md</code>
+    <h2>Все технологии блока — в папке блока</h2>
+    <pre class="language-bash no-nums">
+      <code>src/</code>
+      <code>  blocks/</code>
+      <code>    btn/            # Папка блока</code>
+      <code>      btn.pug</code>
+      <code>      btn.scss</code>
+      <code>      readme.md</code>
+      <code>    burger/         # Папка блока</code>
+      <code>      burger.js</code>
+      <code>      burger.pug</code>
+      <code>      burger.scss</code>
+      <code>      readme.md</code>
+      <code>    ...</code>
     </pre>
-    <p>Проблема: зависимости.</p>
   </section>
 
   <section class="slide">
-    <h2>Создавать это вручную?</h2>
-    <p>Нет. <code>node createBlock.js my-new-block</code></p>
+    <h2>Создавать это вручную? Нет</h2>
+    <pre class="language-bash  no-nums">
+        <code>node createBlock.js new-block          # создать папки, .scss, .md</code>
+        <code>node createBlock.js new-block pug      # тоже, но ещё .pug</code>
+        <code>node createBlock.js new-block pug js   # тоже, но ещё .pug и .js</code>
+      </pre>
     <ul>
-      <li>Создает директорию блока, pug- и scss-файлы, директории картинок.</li>
-      <li>Пишет в созданные файлы заготовки их содержимого.</li>
-      <li>Добавляет созданный блок в projectConfig.json.</li>
+      <li>Создает директорию блока, scss-файл, папки картинок <br> (можно указать несколько дополнительных расширений).
+      </li>
+      <li>Пишет в созданные файлы заготовки их содержимого (только для scss и pug).</li>
       <li>Наливает кофе.</li>
     </ul>
-    <p><code>node createBlock.js my-new-block js</code> — то же, плюс js-файл.</p>
   </section>
+
+
+
+
 
   <section class="slide black">
     <h2 style="color: #fff; font-size: 72px;">Разметка</h2>
-    <img class="cover" src="pictures/html.png" alt="">
+    <img class="cover" src="pictures/html.jpg" alt="">
   </section>
 
-  <section class="slide">
-    <h2><a href="https://pugjs.org/">Pug</a>: меньше повторов</h2>
-    <ul>
-      <li><a href="https://pugjs.org/language/inheritance.html">Шаблоны</a> (идентичные части страниц написаны один раз).</li>
-      <li><a href="https://pugjs.org/language/mixins.html">Примеси</a> (разметка изрядной части БЭМ-блоков — примесь).</li>
-    </ul>
-    <p><a href="https://github.com/nicothin/NTH-start-project/blob/master/src/blocks/logo/logo.pug">Пример</a>.</p>
-  </section>
-
-  <section class="slide">
-    <h2>Не всем БЭМ-блокам нужны pug-примеси</h2>
-    <p>Для каких БЭМ-блоков я их не использую:</p>
-    <ul>
-      <li>Общая раскладка блоков на всех страницах (<code>page</code>).</li>
-      <li>Внутренняя раскладка в больших блоках страниц (<code>layout-text</code>).</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <h2>Что компилируется?</h2>
-    <p>При старте любой gulp-задачи сгенерируется <code>src/pug/mixins.pug</code>, в&nbsp;котором добавляются pug-файлы БЭМ-блоков.</p>
-    <p>Компилируются все pug-файлы, лежащие в <code>src/</code>.</p>
-    <p>Результат пишется в <code>build/</code>.</p>
-  </section>
-
-  <section class="slide">
-    <p><code>src/pug/mixins.pug</code></p>
-    <pre>
-      <code>include ../blocks/page-header/page-header.pug</code>
-      <code>include ../blocks/page-footer/page-footer.pug</code>
-      <code>include ../blocks/logo/logo.pug</code>
-      <code>include ../blocks/main-nav/main-nav.pug</code>
-      <code>include ../blocks/btn/btn.pug</code>
-      <code>include ../blocks/progress/progress.pug</code>
-      <code data-line-num-false>...</code>
-      <code data-line-num="99">include ../blocks/field-text/field-text.pug</code>
+  <div class="slide">
+    <h2>Pug для разметки</h2>
+    <pre class="language-pug">
+      <code>// Файл src/blocks/card/card.pug</code>
+      <code></code>
+      <code>article.card</code>
+      <code>  a.card__wrap(href='...')</code>
+      <code>    img.card__img(src='...', alt='...')</code>
+      <code>    h2.card__title Название книги</code>
+      <code>  p.card__descr Описание книги</code>
+      <code>  p.card__price 630 ₽</code>
     </pre>
-  </section>
+    <p>См. <a href="https://github.com/nicothin/NTH-start-project/blob/master/src/blocks/card/card.pug">реальный пример</a></p>
+  </div>
+
+  <div class="slide">
+    <pre class="language-pug">
+      <code>article.card(class=allMods)&attributes(attributes)</code>
+      <code>  != newLabel</code>
+      <code>  if (data.url !== 'undefined' && data.url)</code>
+      <code>    .card__inner</code>
+      <code>      a.card__img-wrap(href=data.url)</code>
+      <code>        img.card__img(src=data.img, alt=data.name)</code>
+      <code>      h3.card__title</code>
+      <code>        a(href=data.url)!= data.name</code>
+      <code>      if (data.descr !== 'undefined' && data.descr)</code>
+      <code>        p.card__descr!= data.descr</code>
+      <code>      p.card__price!= price</code>
+      <code>  else</code>
+      <code>    .card__inner</code>
+      <code>      span.card__img-wrap</code>
+      <code>        img.card__img(src=data.img, alt=data.name)</code>
+      <code>      h3.card__title!= data.name</code>
+      <code>      if (data.descr !== 'undefined' && data.descr)</code>
+      <code>        p.card__descr!= data.descr</code>
+      <code>      p.card__price!= price</code>
+      <code>  +btn('Купить', '')(class='card__buy')</code>
+    </pre>
+  </div>
+
+
+
+
 
   <section class="slide black">
-    <h2 style="color: #000; margin: 264px 0 0 0px; font-size: 72px;">Стили</h2>
-    <img class="cover" src="pictures/scss.png" alt="">
+    <h2 style="color: #000; margin: 317px 0 0 0px; font-size: 72px;">Стили</h2>
+    <img class="cover" src="pictures/scss.jpg" alt="">
   </section>
 
   <section class="slide">
-    <h2>Стили ДО блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
-    <pre>
-      <code>"addCssBefore": [</code>
-      <code>  "./src/scss/functions.scss",</code>
-      <code>  "./src/scss/variables.scss",</code>
-      <code>  "./src/scss/mixins.scss",</code>
-      <code>  "../../node_modules/nouislider/distribute/nouislider.css"</code>
-      <code>]</code>
+    <h2>Sass и PostCSS для обработки стилей</h2>
+    <ul>
+      <li>Разделение на небольшие файлы.</li>
+      <li class="next">Вложения с <code>&</code></li>
+      <li class="next">Переменные.</li>
+      <li class="next">Автоматический инлайн SVG.</li>
+      <li class="next">Автоматическое добавление вендорных префиксов.</li>
+      <li class="next comment">Мат. операции.</li>
+      <li class="next comment">Примеси.</li>
+    </ul>
+  </section>
+
+  <div class="slide">
+    <h2>Sass и PostCSS для обработки стилей</h2>
+    <pre class="language-scss">
+      <code>// Файл src/blocks/promo/promo.scss</code>
+      <code> </code>
+      <code>.promo {</code>
+      <code>  padding: 0 1rem;</code>
+      <code>  background-color: $gray-lighter;</code>
+      <code></code>
+      <code>  &__inner {</code>
+      <code>    max-width: $content-max-width;</code>
+      <code>    margin: auto;</code>
+      <code>  }</code>
+      <code>}</code>
     </pre>
-  </section>
+  </div>
 
-  <section class="slide">
-    <h2>Стили ПОСЛЕ блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
-    <pre>
-      <code>"addCssAfter": [</code>
-      <code>  "./src/scss/print.scss"</code>
-      <code>]</code>
+  <div class="slide">
+    <h2>Sass и PostCSS для обработки стилей</h2>
+    <pre class="language-scss">
+      <code>// Файл src/scss/style.scss</code>
+      <code></code>
+      <code>@import "src/scss/variables.scss";</code>
+      <code>@import "src/scss/mixins.scss";</code>
+      <code> </code>
+      <code>@import "src/blocks/burger/burger.scss";</code>
+      <code>@import "src/blocks/logo/logo.scss";</code>
+      <code>@import "src/blocks/main-nav/main-nav.scss";</code>
+      <code>@import "src/blocks/page/page.scss";</code>
+      <code>@import "src/blocks/page-footer/page-footer.scss";</code>
+      <code>@import "src/blocks/page-header/page-header.scss";</code>
     </pre>
-  </section>
+  </div>
 
-  <section class="slide">
-    <h2>Файлы, компилируемые отдельно</h2>
-    <pre>
-      <code>"singleCompiled": [</code>
-      <code>  "./src/scss/blocks-library.scss"</code>
-      <code>]</code>
-    </pre>
-  </section>
 
-  <section class="slide">
-    <h2>Что компилируется?</h2>
-    <p>При старте любой gulp-задачи сгенерируется <code>src/scss/style.scss</code>, в&nbsp;котором импортируются:</p>
-    <ol>
-      <li>Стилевые файлы до стилей блоков.</li>
-      <li>Стилевые файлы блоков.</li>
-      <li>Стилевые файлы после стилей блоков.</li>
-    </ol>
-    <p>Он и компилируется в <code>build/css/</code>.</p>
-  </section>
 
-  <section class="slide">
-    <p><code>src/scss/style.scss</code></p>
-    <pre>
-      <code>@import './src/scss/functions.scss';</code>
-      <code>@import './src/scss/variables.scss';</code>
-      <code>@import './src/scss/mixins.scss';</code>
-      <code>@import '../../node_modules/nouislider/distribute/...</code>
-      <code>@import './src/blocks/page/page.scss';</code>
-      <code>@import './src/blocks/typo/typo.scss';</code>
-      <code data-line-num-false>...</code>
-      <code data-line-num="99">@import './src/scss/print.scss';</code>
-    </pre>
-  </section>
+
 
   <section class="slide black">
     <h2 style="color: #fff; font-size: 72px;">Javascript</h2>
-    <img class="cover" src="pictures/js.png" alt="">
+    <img class="cover" src="pictures/js.jpg" alt="">
   </section>
 
   <section class="slide">
-    <h2>JS перед блоками в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
-    <pre>
-      <code>"addJsBefore": [</code>
-      <code>  "./node_modules/jquery/dist/jquery.min.js",</code>
-      <code>  "./node_modules/jquery-migrate/dist/jquery-migrate.min.js",</code>
-      <code>  "./node_modules/svg4everybody/dist/svg4everybody.js",</code>
-      <code>  "./node_modules/ismobilejs/isMobile.min.js",</code>
-      <code>  "./node_modules/object-fit-images/dist/ofi.js"</code>
-      <code>]</code>
-    </pre>
+    <h2>Обработка javascript</h2>
+    <ul>
+      <li>Разделение на небольшие файлы.</li>
+      <li>Два и более блока могут зависеть от одного стороннего инструмента.</li>
+      <li>В результате хочется получить минифицированный бандл.</li>
+    </ul>
   </section>
 
-  <section class="slide">
-    <h2>JS после блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
-    <pre>
-      <code>"addJsAfter": [</code>
-      <code>  "./src/js/global-script.js"</code>
-      <code>]</code>
-    </pre>
-  </section>
 
-  <section class="slide">
-    <h2>Как обрабатывается?</h2>
-    <p>Сливается в один файл и записывается в <code>build/js/script.min.js</code>.</p>
-  </section>
+
 
 
   <section class="slide black">
@@ -335,38 +530,42 @@
       <li>Лучше видно ошибки.</li>
       <li>Нет холивара при совместной работе.</li>
     </ul>
-    <p>Проверка по командам и по прекоммит-хуку.</p>
+    <hr>
+    <p>Проверка eslint и stylelint по командам и по прекоммит-хуку.</p>
   </section>
 
-  <section class="slide black">
-    <h2 style="color: #fff; font-size: 72px; text-align: center; transform: translateY(-50px);">Что в планах</h2>
-    <img class="cover" src="pictures/end.jpg" alt="">
-  </section>
 
-  <section class="slide">
-    <h2>В планах</h2>
-    <ul>
-      <li>Разбор разметки для определения блоков и включения их в&nbsp;сборку.</li>
-      <li>Механизм разрешения зависимостей для JS, отдельные бандлы.</li>
-      <li>Добавления компонентов в библиотеку</li>
-      <li>Отказ от json для конфига.</li>
-    </ul>
-  </section>
+
+
 
   <section class="slide">
     <h2>Вопросы?</h2>
     <ul>
-      <li><a href="https://github.com/nicothin/NTH-start-project">github.com/nicothin/NTH-start-project</a> </li>
+      <li><a href="https://github.com/nicothin/NTH-start-project">NTH-start-project</a> </li>
       <li><a href="https://vk.com/n.gromov">vk.com/n.gromov</a> </li>
-      <li><a href="http://nicothin.ru/contact">nicothin.pro/contact</a> </li>
+      <li><a href="https://nicothin.pro/contact">nicothin.pro/contact</a> </li>
     </ul>
     <p>© Николай Громов.</p>
   </section>
 
-  <div class="progress"></div>
+  <div class="slide black" id="bonus" style="display: flex; justify-content: center; align-items: center;">
+    <img class="cover" src="pictures/image_epixx_20170817_html_012.jpg" style="width: 105%; height: auto; max-height: none; filter: blur(3px);" alt="">
+    <p style="color: #fff; z-index: 2; max-width: 446px; text-align: center;"><b>Бонус</b> <br>скидка 10% на любой курс в <a href="https://epixx.ru/">EpicSkills</a> по промо-коду <b>GROMOV10</b></p>
+    <style>
+      #bonus:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+      }
+    </style>
+  </div>
 
   <script src="shower/shower.min.js"></script>
-  <!-- Copyright © Nikolay Gromov. 2018. -->
+  <script src="prism/prism.js"></script>
 
 </body>
 </html>
